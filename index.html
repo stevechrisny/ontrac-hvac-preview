@@ -1,0 +1,961 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OnTrac HVAC · 24-Hour Heating &amp; Cooling, Commack NY</title>
+<meta name="description" content="OnTrac HVAC: 24-hour heating and air conditioning repair, ductless mini-splits, heat pumps and commercial rooftop units. Based in Commack, serving Long Island. Call (347) 599-6791.">
+<meta name="theme-color" content="#0E1317">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 96'%3E%3Cpath fill='%23F27A36' d='M74 38 57 67.4H23L6 38 23 8.6h34z'/%3E%3Cpath fill='%232FA3E6' d='M96 62 81 88H51L36 62 51 36h30z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Schibsted+Grotesk:ital,wght@0,400..800;1,400..600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/cezar-minisplit.webp">
+<link rel="stylesheet" href="scrollcraft.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HVACBusiness",
+  "name": "OnTrac HVAC LLC",
+  "alternateName": "OntracHVAC",
+  "telephone": "+1-347-599-6791",
+  "email": "ontrachvac@gmail.com",
+  "sameAs": ["https://www.facebook.com/OnTracHVAC/","https://www.homeadvisor.com/rated.OnTracHVAC.124196792.html","https://www.angi.com/companylist/us/ny/commack/ontrac-hvac-llc-reviews-124196792.htm"],
+  "founder": { "@type": "Person", "name": "Cezar Dinca" },
+  "foundingDate": "2021-11-16",
+  "url": "https://ontrachvac.com/",
+  "image": "https://ontrachvac.com/assets/van.webp",
+  "address": { "@type": "PostalAddress", "addressLocality": "Commack", "addressRegion": "NY", "postalCode": "11725", "addressCountry": "US" },
+  "geo": { "@type": "GeoCoordinates", "latitude": 40.8429, "longitude": -73.2929 },
+  "areaServed": ["Commack","East Northport","Northport","Huntington","Greenlawn","Dix Hills","Smithtown","Kings Park","Hauppauge","North Babylon","Massapequa","Roslyn","Suffolk County","Nassau County","Queens"],
+  "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59" }],
+  "knowsLanguage": ["en","es"],
+  "paymentAccepted": "Cash, Credit Card",
+  "makesOffer": [
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Emergency heating and air conditioning repair"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Ductless mini-split installation"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Central air and heat pump installation"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Commercial rooftop unit replacement"}}
+  ]
+}
+</script>
+<style>
+  @property --acc      { syntax: "<color>"; inherits: true; initial-value: #F27A36; }
+  @property --acc-lt   { syntax: "<color>"; inherits: true; initial-value: #A8420E; }
+  @property --acc-dk   { syntax: "<color>"; inherits: true; initial-value: #FF9D66; }
+
+  :root {
+    --night:   #0E1317;   /* the van's panel black */
+    --night-2: #161E24;
+    --paper:   #E9EDEE;   /* poured concrete, cool */
+    --paper-2: #F6F7F7;
+    --ink-d:   #10171B;
+    --ink-d-soft: #4B585F;
+    --ink-l:   #EEF2F3;
+    --ink-l-soft: #A3B0B7;
+
+    --sc-canvas: var(--paper);
+    --sc-surface: var(--paper-2);
+    --sc-ink: var(--ink-d);
+    --sc-ink-soft: var(--ink-d-soft);
+    --sc-accent: var(--acc);
+    --sc-accent-ink: #10171B;
+    --sc-font-display: "Archivo", system-ui, sans-serif;
+    --sc-font-text: "Schibsted Grotesk", system-ui, sans-serif;
+    --sc-r-sm: 4px; --sc-r-md: 6px; --sc-r-lg: 10px;
+    --wide: 118;
+    --bar-h: 64px;
+    --sc-shadow-color: 205 30% 8%;
+  }
+  body[data-mode="cool"] { --acc: #2FA3E6; --acc-lt: #0A6299; --acc-dk: #72C6F4; }
+  body { transition: --acc 500ms var(--sc-ease-out), --acc-lt 500ms var(--sc-ease-out), --acc-dk 500ms var(--sc-ease-out); }
+  body[data-mode="heat"] .only-cool, body[data-mode="cool"] .only-heat { display: none !important; }
+
+  .dark { --sc-ink: var(--ink-l); --sc-ink-soft: var(--ink-l-soft); --sc-hairline: rgb(238 242 243 / .13); background: var(--night); color: var(--sc-ink); }
+  .light { --sc-ink: var(--ink-d); --sc-ink-soft: var(--ink-d-soft); background: var(--paper); color: var(--sc-ink); }
+
+  h1, h2, h3 { font-family: var(--sc-font-display); font-variation-settings: "wdth" 104; font-weight: 800; letter-spacing: -0.02em; line-height: 1.02; margin: 0; text-wrap: balance; }
+  p { margin: 0; }
+  a { color: inherit; }
+  .t-label { font-family: var(--sc-font-text); font-size: var(--sc-t-xs); font-weight: 650; letter-spacing: .09em; text-transform: uppercase; }
+  .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  /* ---------- buttons: one radius, two intents ---------- */
+  .btn { display: inline-flex; align-items: center; gap: .6em; min-height: 48px; padding: 0 1.25rem; border-radius: var(--sc-r-md); font-weight: 700; font-size: var(--sc-t-sm); text-decoration: none; white-space: nowrap; border: 1px solid transparent; cursor: pointer; transition: transform 140ms var(--sc-ease-out), background-color 160ms var(--sc-ease-out), border-color 160ms var(--sc-ease-out); }
+  .btn:active { transform: translateY(1px) scale(.985); }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+  .btn--call { background: var(--acc); color: #10171B; box-shadow: var(--sc-e1); }
+  @media (hover: hover) and (pointer: fine) { .btn--call:hover { background: color-mix(in oklab, var(--acc) 86%, white); } .btn--ghost:hover { border-color: currentColor; } }
+  .btn--ghost { border-color: color-mix(in oklab, currentColor 34%, transparent); color: inherit; background: transparent; }
+  :focus-visible { outline: 2px solid var(--acc); outline-offset: 3px; border-radius: 3px; }
+
+  /* ---------- mark ---------- */
+  .mark { display: inline-flex; align-items: center; gap: .7rem; text-decoration: none; color: var(--ink-l); }
+  .mark svg { width: 40px; height: auto; }
+  .mark__word { display: grid; line-height: 1; }
+  .mark__word b { font-family: var(--sc-font-display); font-variation-settings: "wdth" 125; font-weight: 800; font-size: 1.06rem; letter-spacing: .02em; }
+  .mark__word small { font-size: .58rem; font-weight: 650; letter-spacing: .2em; color: var(--ink-l-soft); margin-top: 4px; }
+
+  /* ---------- dispatch bar ---------- */
+  .bar { position: fixed; inset: 0 0 auto 0; z-index: 70; height: var(--bar-h); background: rgb(14 19 23 / .94); color: var(--ink-l); border-bottom: 1px solid rgb(238 242 243 / .08); }
+  .bar__in { height: 100%; max-width: 92rem; margin-inline: auto; padding-inline: clamp(1rem, 3vw, 2rem); display: flex; align-items: center; gap: clamp(.75rem, 2vw, 1.75rem); }
+  .bar nav { display: flex; gap: 1.4rem; margin-left: .5rem; }
+  .bar nav a { font-size: var(--sc-t-sm); color: var(--ink-l-soft); text-decoration: none; padding: .5rem 0; transition: color 150ms; }
+  .bar nav a:hover { color: var(--ink-l); }
+  .bar__right { margin-left: auto; display: flex; align-items: center; gap: 1rem; }
+  .status { display: grid; line-height: 1.15; font-size: .72rem; color: var(--ink-l-soft); text-align: right; }
+  .status b { color: var(--ink-l); font-weight: 700; font-size: .78rem; }
+  .status b::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #5DD39E; margin-right: 6px; vertical-align: 1px; box-shadow: 0 0 0 3px rgb(93 211 158 / .18); }
+
+  /* ---------- the thermostat (signature) ---------- */
+  .mode__q { font-size: .72rem; font-weight: 650; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-l-soft); margin-right: -.4rem; }
+  @media (max-width: 1240px) { .mode__q { display: none; } }
+  .mode { position: relative; display: inline-grid; grid-template-columns: 1fr 1fr; padding: 3px; border-radius: var(--sc-r-md); background: rgb(238 242 243 / .07); border: 1px solid rgb(238 242 243 / .12); }
+  .mode__thumb { position: absolute; top: 3px; bottom: 3px; left: 3px; width: calc(50% - 3px); border-radius: 4px; background: var(--acc); transition: transform 380ms var(--sc-ease-out); box-shadow: 0 1px 2px rgb(0 0 0 / .3), 0 4px 10px -2px rgb(0 0 0 / .35); }
+  body[data-mode="cool"] .mode__thumb { transform: translateX(100%); }
+  .mode button { position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center; gap: .4rem; min-height: 36px; padding: 0 .85rem; border: 0; background: none; color: var(--ink-l-soft); font-size: .8rem; font-weight: 700; letter-spacing: .02em; cursor: pointer; border-radius: 4px; transition: color 200ms; }
+  .mode button[aria-checked="true"] { color: #10171B; }
+  .mode svg { width: 15px; height: 15px; }
+
+  /* ---------- hero ---------- */
+  .hero { background: var(--night); color: var(--ink-l); }
+  .hero__stage { height: 100svh; min-height: 560px; overflow: hidden; isolation: isolate; }
+  .hero__plate { position: absolute; inset: -2% 0 0 0; z-index: 0; transform-origin: 62% 70%; transform: scale(calc(1.02 + var(--sc-p, 0) * .07)) translate3d(0, calc(var(--sc-p, 0) * -1.5%), 0); }
+  .hero__plate img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 58% 62%; transition: opacity 900ms var(--sc-ease-out); max-width: none; }
+  .plate--summer { opacity: 0; filter: contrast(1.06) saturate(1.08); }
+  body[data-mode="cool"] .plate--summer { opacity: 1; }
+  body[data-mode="cool"] .plate--winter { opacity: 0; }
+
+
+  .hero__van { position: absolute; z-index: 2; right: 5vw; bottom: 9vh; width: min(47vw, 860px); transform-origin: 50% 96%; transform: translate3d(calc(var(--sc-p, 0) * -2vw), calc(var(--sc-p, 0) * 1vh), 0) scale(calc(1 + var(--sc-p, 0) * .12)); }
+  .hero__van img { width: 100%; height: auto; max-width: none; position: relative; z-index: 1; transition: filter 900ms var(--sc-ease-out); }
+  body[data-mode="heat"] .hero__van img { filter: brightness(.74) saturate(.78) contrast(1.06) hue-rotate(-4deg); }
+  .hero__van::before { content: ""; position: absolute; z-index: 0; left: 4%; right: 3%; bottom: -1.5%; height: 13%; background: radial-gradient(50% 50% at 50% 50%, rgb(4 6 8 / .78), rgb(4 6 8 / 0) 72%); filter: blur(6px); }
+  .hero__van::after { content: ""; position: absolute; z-index: 2; inset: 0; pointer-events: none; background: linear-gradient(to bottom, rgb(70 105 160 / .32), rgb(30 50 90 / .22) 60%, rgb(10 16 30 / .35)); -webkit-mask: url(assets/van-cut.webp) center / 100% 100% no-repeat; mask: url(assets/van-cut.webp) center / 100% 100% no-repeat; opacity: 1; transition: opacity 900ms var(--sc-ease-out); mix-blend-mode: multiply; }
+  body[data-mode="cool"] .hero__van::after { opacity: 0; }
+
+  .hero__snow { position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%; pointer-events: none; transform: translate3d(0, calc(var(--sc-p, 0) * -90px), 0); transition: opacity 700ms; }
+  body[data-mode="cool"] .hero__snow { opacity: 0; }
+  .hero__sun { position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0; transition: opacity 900ms; background: radial-gradient(70% 60% at 82% -8%, rgb(255 236 200 / .55), rgb(255 236 200 / 0) 60%), linear-gradient(to top, rgb(255 205 140 / .14), transparent 40%); mix-blend-mode: screen; }
+  body[data-mode="cool"] .hero__sun { opacity: 1; }
+
+  .hero__scrim { position: absolute; inset: 0; z-index: 4; pointer-events: none; background:
+      linear-gradient(90deg, rgb(8 12 15 / .82), rgb(8 12 15 / .6) 28%, rgb(8 12 15 / 0) 52%),
+      radial-gradient(62% 80% at 0% 100%, rgb(8 12 15 / .7), rgb(8 12 15 / 0) 74%),
+      linear-gradient(to bottom, rgb(8 12 15 / .55), rgb(8 12 15 / 0) 22%); }
+  .hero__floor { position: absolute; inset: auto 0 0 0; height: 18vh; z-index: 5; background: linear-gradient(to top, rgb(14 19 23 / .9), transparent); pointer-events: none; }
+
+  .hero__copy { position: absolute; z-index: 6; left: clamp(1.25rem, 4.5vw, 4.5rem); bottom: clamp(3rem, 11vh, 8rem); width: min(36rem, 38vw); }
+  .hero h1 { font-variation-settings: "wdth" 118; text-shadow: 0 2px 22px rgb(6 9 12 / .4); font-size: clamp(2.6rem, 1.4rem + 3.6vw, 5.1rem); letter-spacing: -0.03em; line-height: .98; }
+  .hero h1 em { font-style: normal; color: var(--acc-dk); transition: color 500ms; }
+  .hero__sub { margin-top: 1.1rem; max-width: 30rem; font-size: var(--sc-t-lg); line-height: 1.45; color: #D5DDE1; }
+  .hero__cta { margin-top: 1.75rem; display: flex; flex-wrap: wrap; gap: .75rem; }
+  .hero__beat { position: absolute; z-index: 6; left: clamp(1.25rem, 4.5vw, 4.5rem); bottom: clamp(3rem, 11vh, 8rem); width: min(34rem, 38vw); }
+  .hero__beat p { font-size: var(--sc-t-lg); color: #DDE4E7; line-height: 1.45; }
+  .hero__beat strong { display: block; font-family: var(--sc-font-display); font-variation-settings: "wdth" 118; font-size: clamp(2.4rem, 1.3rem + 3.2vw, 4.6rem); letter-spacing: -.03em; color: #fff; line-height: .98; margin-bottom: 1rem; }
+
+  /* ---------- triage ---------- */
+  .triage { padding-block: clamp(4.5rem, 8vw, 8rem); }
+  .triage__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+  .triage h2 { font-size: clamp(2.2rem, 1.4rem + 2.6vw, 3.9rem); }
+  .triage h2 span { color: var(--acc-lt); transition: color 500ms; }
+  .triage__lede { margin-top: 1.25rem; font-size: var(--sc-t-lg); line-height: 1.5; color: var(--sc-ink-soft); max-width: 28rem; }
+  .triage__safety { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--sc-hairline-strong); font-size: var(--sc-t-sm); color: var(--sc-ink-soft); max-width: 28rem; }
+  .triage__safety strong { color: var(--sc-ink); }
+  .symptoms { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--sc-hairline-strong); }
+  .symptoms li { border-bottom: 1px solid var(--sc-hairline-strong); }
+  .symptoms button { width: 100%; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1rem; min-height: 64px; padding: .9rem .25rem; background: none; border: 0; text-align: left; cursor: pointer; font-size: var(--sc-t-lg); font-weight: 600; color: var(--sc-ink); letter-spacing: -.01em; transition: padding 0ms, color 160ms; }
+  .symptoms button .tag { font-size: var(--sc-t-xs); font-weight: 750; letter-spacing: .06em; text-transform: uppercase; padding: .35rem .65rem; border-radius: 4px; white-space: nowrap; border: 1px solid var(--sc-hairline-strong); color: var(--sc-ink); }
+  .symptoms button .tag--call { background: var(--acc); border-color: transparent; color: #10171B; transition: background-color 500ms; }
+  .symptoms button[aria-expanded="true"] { color: var(--acc-lt); }
+  @media (hover: hover) and (pointer: fine) { .symptoms button:hover { color: var(--acc-lt); } }
+  .verdict { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 280ms var(--sc-ease-out); }
+  .verdict > div { overflow: hidden; }
+  .symptoms li.open .verdict { grid-template-rows: 1fr; }
+  .verdict__in { display: grid; grid-template-columns: 1fr auto; gap: 1rem 1.5rem; align-items: end; padding: .25rem .25rem 1.4rem; }
+  .verdict p { color: var(--sc-ink-soft); max-width: 40rem; }
+  .verdict b.call { color: var(--sc-ink); }
+  .verdict .btn--ghost { color: var(--sc-ink); }
+
+  /* ---------- services cards ---------- */
+  .svc { padding-block: clamp(4.5rem, 8vw, 8rem); background: var(--paper-2); }
+  .svc__head { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 1.5rem 4rem; align-items: end; margin-bottom: clamp(2rem, 4vw, 3.25rem); }
+  .svc__head h2 { font-size: clamp(2rem, 1.3rem + 2.2vw, 3.4rem); max-width: 18ch; }
+  .svc__head p { color: var(--sc-ink-soft); max-width: 30rem; }
+  .svc__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.25rem, 2.4vw, 2.25rem) clamp(1rem, 2vw, 1.75rem); }
+  .card { display: flex; flex-direction: column; }
+  .card__img { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--sc-r-md); background: #d4dade; }
+  .card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms var(--sc-ease-out); }
+  @media (hover: hover) and (pointer: fine) { .card:hover .card__img img { transform: scale(1.03); } }
+  .card__rep { position: absolute; right: .5rem; bottom: .5rem; font-size: .66rem; font-weight: 600; letter-spacing: .02em; color: #fff; background: rgb(14 19 23 / .62); padding: .2rem .45rem; border-radius: 3px; }
+  .card h3 { margin-top: 1.1rem; font-size: var(--sc-t-lg); font-variation-settings: "wdth" 100; font-weight: 750; letter-spacing: -.015em; }
+  .card p { margin-top: .45rem; color: var(--sc-ink-soft); font-size: var(--sc-t-sm); line-height: 1.55; }
+  .card .card__subs { margin-top: .6rem; color: var(--sc-ink); font-weight: 600; font-size: var(--sc-t-xs); letter-spacing: .02em; }
+  .card__link { margin-top: auto; padding-top: .9rem; font-weight: 700; font-size: var(--sc-t-sm); color: var(--acc-lt); text-decoration: none; transition: color 400ms; }
+  .card__link:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .card__link span { display: inline-block; transition: transform 160ms var(--sc-ease-out); }
+  .card__link:hover span { transform: translateX(3px); }
+  .svc__brands { margin-top: clamp(2.5rem, 5vw, 3.5rem); padding-top: 1.25rem; border-top: 1px solid var(--sc-hairline-strong); font-weight: 650; color: var(--sc-ink); font-size: var(--sc-t-sm); letter-spacing: .01em; }
+  .svc__brands span { display: block; font-size: var(--sc-t-xs); letter-spacing: .09em; text-transform: uppercase; color: var(--sc-ink-soft); margin-bottom: .35rem; }
+  .svc__bar { margin-top: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; padding: 1.25rem 1.5rem; border-radius: var(--sc-r-md); background: var(--night); color: var(--ink-l); }
+  .svc__bar p { font-size: var(--sc-t-lg); }
+  .svc__bar b { font-weight: 700; }
+
+  /* ---------- steps ---------- */
+  .steps { padding-block: clamp(4rem, 7vw, 7rem); background: var(--paper); }
+  .steps h2 { font-size: clamp(1.9rem, 1.2rem + 1.8vw, 3rem); font-variation-settings: "wdth" 100; }
+  .steps__list { list-style: none; margin: clamp(2rem, 4vw, 3rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem clamp(1.25rem, 2.5vw, 2.5rem); counter-reset: s; }
+  .steps__list li { border-top: 2px solid var(--sc-ink); padding-top: 1.1rem; }
+  .steps__n { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--acc); color: #10171B; font-weight: 800; font-size: .9rem; transition: background-color 500ms; }
+  .steps h3 { margin-top: .9rem; font-size: var(--sc-t-lg); font-variation-settings: "wdth" 100; font-weight: 750; letter-spacing: -.01em; }
+  .steps p { margin-top: .5rem; color: var(--sc-ink-soft); font-size: var(--sc-t-sm); line-height: 1.55; }
+
+  /* ---------- trust strip ---------- */
+  .trust { background: #0B1013; border-top: 1px solid rgb(238 242 243 / .07); }
+  .trust__in { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 2.25rem; padding-block: 1.15rem; font-size: var(--sc-t-sm); color: var(--ink-l-soft); }
+  .trust__item { display: inline-flex; align-items: center; gap: .5rem; text-decoration: none; color: inherit; }
+  a.trust__item:hover { color: var(--ink-l); }
+  .trust__item b { color: var(--ink-l); font-weight: 700; }
+  .stars { color: #F5B83D; letter-spacing: 1px; font-size: .85rem; }
+
+  /* ---------- owner (the quiet one) ---------- */
+  .owner { padding-block: clamp(5rem, 10vw, 10rem); }
+  .owner__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 5fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+  .owner figure { margin: 0; position: relative; aspect-ratio: 5 / 4; overflow: hidden; border-radius: var(--sc-r-md); background: var(--night); }
+  .owner figure img { position: absolute; left: 0; top: -8%; width: 100%; height: 116%; object-fit: cover; object-position: 60% 50%; max-width: none; }
+  .owner figcaption { position: absolute; left: .9rem; bottom: .8rem; z-index: 2; font-size: var(--sc-t-xs); color: #fff; background: rgb(14 19 23 / .72); padding: .35rem .6rem; border-radius: 4px; }
+  .owner h2 { font-size: clamp(1.9rem, 1.2rem + 1.8vw, 3rem); }
+  .owner p { margin-top: 1.25rem; color: var(--sc-ink-soft); max-width: 34rem; font-size: var(--sc-t-lg); line-height: 1.55; }
+  .owner p.es { font-size: var(--sc-t-base); margin-top: 1.5rem; color: var(--sc-ink); font-weight: 600; }
+
+  /* ---------- the lift (commercial) ---------- */
+  .lift { padding-block: clamp(5rem, 9vw, 9rem); overflow: clip; }
+  .lift__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: center; }
+  .lift__eyebrow { color: var(--acc-dk); transition: color 500ms; }
+  .lift h2 { margin-top: .8rem; font-size: clamp(2rem, 1.3rem + 2.2vw, 3.4rem); }
+  .lift__copy > p:not(.t-label) { margin-top: 1.2rem; color: var(--ink-l-soft); font-size: var(--sc-t-lg); line-height: 1.5; max-width: 32rem; }
+  .lift__list { list-style: none; margin: 1.5rem 0 2rem; padding: 0; border-top: 1px solid var(--sc-hairline); max-width: 30rem; }
+  .lift__list li { padding: .7rem 0 .7rem 1.6rem; border-bottom: 1px solid var(--sc-hairline); position: relative; }
+  .lift__list li::before { content: ""; position: absolute; left: .1rem; top: 1.1rem; width: .7rem; height: .4rem; border-left: 2px solid var(--acc-dk); border-bottom: 2px solid var(--acc-dk); transform: rotate(-45deg); }
+  .lift__recent { margin: -0.75rem 0 2rem; color: var(--ink-l-soft); font-size: var(--sc-t-sm); max-width: 32rem; line-height: 1.55; }
+  .lift__recent b { color: var(--ink-l); }
+  .lift__media { position: relative; padding: 0 0 12% 14%; }
+  .lift__main { margin: 0; aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--sc-r-md); box-shadow: var(--sc-e3); }
+  .lift__main img { width: 100%; height: 118%; object-fit: cover; object-position: 50% 30%; max-width: none; margin-top: -9%; }
+  .lift__inset { position: absolute; left: 0; bottom: 0; width: 46%; margin: 0; border-radius: var(--sc-r-md); overflow: hidden; box-shadow: var(--sc-e3); border: 4px solid var(--night); background: var(--night); }
+  .lift__inset img { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 60%; }
+  .lift__inset figcaption { padding: .55rem .7rem; font-size: var(--sc-t-xs); color: var(--ink-l-soft); }
+
+  /* ---------- work rail ---------- */
+  .work { background: var(--paper); }
+  .work__stage { height: 100svh; display: flex; align-items: center; overflow: hidden; padding-top: var(--bar-h); }
+  .work__rail { display: flex; gap: clamp(1rem, 2vw, 1.75rem); padding-inline: clamp(1.25rem, 4.5vw, 4.5rem); align-items: stretch; }
+  .work__lead { flex: 0 0 clamp(17rem, 26vw, 24rem); display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 1rem; }
+  .work__lead h2 { font-size: var(--sc-t-3xl); }
+  .work__lead p { margin-top: 1rem; color: var(--sc-ink-soft); max-width: 22rem; }
+  .job { flex: 0 0 clamp(16rem, 24vw, 22rem); margin: 0; display: flex; flex-direction: column; }
+  .job__img { aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--sc-r-md); background: #cfd5d8; }
+  .job__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms var(--sc-ease-out); }
+  @media (hover: hover) and (pointer: fine) { .job:hover .job__img img { transform: scale(1.03); } }
+  .job dl { margin: .9rem 0 0; display: grid; grid-template-columns: auto 1fr; gap: .3rem .9rem; font-size: var(--sc-t-sm); border-top: 1px solid var(--sc-hairline-strong); padding-top: .75rem; }
+  .job dt { color: var(--sc-ink-soft); font-size: var(--sc-t-xs); font-weight: 650; letter-spacing: .08em; text-transform: uppercase; padding-top: .2em; }
+  .job dd { margin: 0; color: var(--sc-ink); }
+  .story { flex: 0 0 clamp(18rem, 30vw, 27rem); display: flex; flex-direction: column; justify-content: center; padding: clamp(1.5rem, 2.5vw, 2.25rem); border-radius: var(--sc-r-md); background: var(--night); color: var(--ink-l); }
+  .story .t-label { color: var(--acc-dk); }
+  .story blockquote { margin: 1rem 0 0; font-family: var(--sc-font-display); font-variation-settings: "wdth" 110; font-weight: 700; font-size: var(--sc-t-xl); line-height: 1.12; letter-spacing: -.015em; }
+  .story p { margin-top: 1rem; color: var(--ink-l-soft); font-size: var(--sc-t-sm); }
+
+  /* ---------- reviews ---------- */
+  .voices { padding-block: clamp(5rem, 9vw, 9rem); }
+  .voices__h { font-size: var(--sc-t-sm); font-family: var(--sc-font-text); font-weight: 650; letter-spacing: .09em; text-transform: uppercase; color: var(--acc-dk); transition: color 500ms; }
+  .voices__lead { margin: 1.25rem 0 0; }
+  .voices__big { margin: 0; font-family: var(--sc-font-display); font-variation-settings: "wdth" 104; font-weight: 750; font-size: clamp(1.9rem, 1.1rem + 2.4vw, 3.3rem); line-height: 1.1; letter-spacing: -.025em; max-width: 24ch; text-wrap: balance; }
+  .voices figcaption { margin-top: 1.1rem; color: var(--ink-l-soft); font-size: var(--sc-t-sm); }
+  .voices figcaption b { color: var(--ink-l); }
+  .voices__more { margin-top: clamp(3rem, 6vw, 4.5rem); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem clamp(1.5rem, 3vw, 2.75rem); border-top: 1px solid var(--sc-hairline); padding-top: 2rem; }
+  .voices__more figure { margin: 0; }
+  .voices__more blockquote { margin: 0; font-size: var(--sc-t-base); line-height: 1.5; }
+  .voices__links { margin-top: 2.5rem; font-size: var(--sc-t-sm); color: var(--ink-l-soft); }
+  .voices__links a { color: var(--ink-l); }
+
+  /* ---------- area / rebates / faq ---------- */
+  .info { padding-block: clamp(4.5rem, 8vw, 8rem); }
+  .info__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2.5rem, 6vw, 6rem); }
+  .info h2 { font-size: clamp(1.9rem, 1.2rem + 1.7vw, 2.9rem); }
+  .towns { margin-top: 1.5rem; columns: 2; column-gap: 2rem; list-style: none; padding: 0; font-size: var(--sc-t-base); }
+  .towns li { padding: .35rem 0; border-bottom: 1px solid var(--sc-hairline); break-inside: avoid; }
+  .towns li:first-child { font-weight: 700; }
+  .info__note { margin-top: 1rem; font-size: var(--sc-t-sm); color: var(--sc-ink-soft); }
+  .rebate { margin-top: 3rem; padding: 1.5rem; border-radius: var(--sc-r-md); background: var(--paper-2); box-shadow: var(--sc-e1); }
+  .rebate h3 { font-size: var(--sc-t-lg); font-variation-settings: "wdth" 110; }
+  .rebate p { margin-top: .6rem; color: var(--sc-ink-soft); font-size: var(--sc-t-sm); }
+  .faq { margin-top: 1.5rem; border-top: 2px solid var(--sc-ink); }
+  .faq details { border-bottom: 1px solid var(--sc-hairline-strong); }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.15rem 0; font-weight: 650; font-size: var(--sc-t-lg); letter-spacing: -.01em; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: ""; width: 12px; height: 12px; flex: none; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-3px); transition: transform 200ms var(--sc-ease-out); }
+  .faq details[open] summary::after { transform: rotate(225deg) translateY(-3px); }
+  .faq details p { padding: 0 0 1.25rem; color: var(--sc-ink-soft); max-width: 44rem; }
+
+  /* ---------- work order (close) ---------- */
+  .order { padding-block: clamp(4.5rem, 8vw, 8rem) 0; }
+  .order__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: start; }
+  .order h2 { font-size: clamp(2.2rem, 1.4rem + 2.6vw, 3.9rem); }
+  .order__phone { display: block; margin-top: 1.75rem; font-family: var(--sc-font-display); font-variation-settings: "wdth" 112; font-weight: 800; font-size: clamp(2rem, 1.2rem + 2.2vw, 3.2rem); letter-spacing: -.02em; text-decoration: none; color: var(--acc-dk); line-height: 1; transition: color 500ms; }
+  .order__phone:hover { text-decoration: underline; text-underline-offset: .12em; text-decoration-thickness: 3px; }
+  .order__aside p { margin-top: 1rem; color: var(--ink-l-soft); }
+  .order__aside dl { margin: 2rem 0 0; display: grid; grid-template-columns: auto 1fr; gap: .5rem 1.25rem; font-size: var(--sc-t-sm); border-top: 1px solid var(--sc-hairline); padding-top: 1.25rem; }
+  .order__aside dt { color: var(--ink-l-soft); }
+  .order__aside dd { margin: 0; }
+  .order__aside dd a { text-decoration: none; }
+  .muted { color: var(--ink-l-soft); }
+  .ticket { background: var(--paper-2); color: var(--ink-d); border-radius: var(--sc-r-lg); box-shadow: var(--sc-e3); overflow: hidden; --sc-ink: var(--ink-d); --sc-ink-soft: var(--ink-d-soft); }
+  .ticket__head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 1.5rem; border-bottom: 2px dashed #C5CDD1; }
+  .ticket__head .t-label { color: var(--ink-d-soft); }
+  .ticket__mode { display: inline-flex; align-items: center; gap: .4rem; font-size: var(--sc-t-xs); font-weight: 750; letter-spacing: .08em; text-transform: uppercase; padding: .3rem .6rem; border-radius: 4px; background: var(--acc); color: #10171B; transition: background-color 500ms; }
+  .ticket form { padding: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem 1.25rem; }
+  .field { display: grid; gap: .4rem; }
+  .field--full { grid-column: 1 / -1; }
+  .field label, .field legend { font-size: var(--sc-t-xs); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-d-soft); padding: 0; }
+  .field input, .field select, .field textarea { width: 100%; min-height: 48px; padding: .7rem .85rem; border: 1px solid #BAC4C9; border-radius: var(--sc-r-sm); background: #fff; color: var(--ink-d); font-size: 1rem; transition: border-color 150ms, box-shadow 150ms; }
+  .field textarea { min-height: 96px; resize: vertical; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--ink-d); box-shadow: 0 0 0 3px color-mix(in oklab, var(--acc) 45%, transparent); }
+  .seg { display: flex; flex-wrap: wrap; gap: .5rem; border: 0; margin: 0; padding: 0; }
+  .seg legend { margin-bottom: .4rem; }
+  .seg label { position: relative; text-transform: none; letter-spacing: 0; font-size: var(--sc-t-sm); font-weight: 600; color: var(--ink-d); }
+  .seg input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .seg span { display: inline-flex; align-items: center; min-height: 40px; padding: 0 .9rem; border: 1px solid #BAC4C9; border-radius: var(--sc-r-sm); background: #fff; cursor: pointer; transition: background-color 150ms, border-color 150ms; }
+  .seg input:checked + span { background: var(--ink-d); border-color: var(--ink-d); color: #fff; }
+  .seg input:focus-visible + span { outline: 2px solid var(--acc-lt); outline-offset: 2px; }
+  .ticket__foot { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; padding-top: .5rem; }
+  .ticket__foot .btn--call { min-width: 12rem; justify-content: center; }
+  .ticket__foot small { color: var(--ink-d-soft); font-size: var(--sc-t-xs); max-width: 22rem; }
+  .ticket__status { grid-column: 1 / -1; font-size: var(--sc-t-sm); font-weight: 600; color: var(--ink-d); }
+  .ticket__status:empty { display: none; }
+
+  .foot { margin-top: clamp(4rem, 8vw, 7rem); padding: 2rem 0 2.5rem; border-top: 1px solid var(--sc-hairline); display: flex; flex-wrap: wrap; gap: 1.25rem 3rem; align-items: center; justify-content: space-between; font-size: var(--sc-t-xs); color: var(--ink-l-soft); }
+  .foot a { color: var(--ink-l-soft); }
+
+  /* ---------- hero: owner-first split (option C) ---------- */
+/* C: owner-first split. Real photo of Cezar on a job, right; copy on van-panel black, left; real van as a small signature card. */
+.hero__snow, .hero__sun, .hero__scrim, .hero__floor { display: none; }
+.hero__beat { top: 50%; bottom: auto; translate: 0 -46%; width: min(34rem, 38vw); }
+.hero__photo { position: absolute; z-index: 0; top: var(--bar-h); right: 0; bottom: 0; width: 56vw; margin: 0; overflow: hidden; }
+.hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 72% 30%; max-width: none; transform-origin: 75% 30%; transform: scale(calc(1.02 + var(--sc-p, 0) * .06)); }
+.hero__photo::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, var(--night), rgb(14 19 23 / 0) 22%), linear-gradient(to top, rgb(14 19 23 / .55), transparent 30%); }
+.hero__photo figcaption { position: absolute; z-index: 1; right: clamp(1rem, 2.5vw, 2rem); bottom: clamp(1rem, 3vh, 2rem); font-size: .85rem; color: #DDE4E7; }
+.hero__photo figcaption b { color: #fff; }
+.hero__vancard { position: absolute; z-index: 6; left: calc(44vw - 1.5rem); bottom: clamp(1.25rem, 4vh, 3rem); width: clamp(13rem, 19vw, 18rem); background: var(--night-2); border: 1px solid rgb(238 242 243 / .1); border-radius: var(--sc-r-lg); padding: .4rem .4rem .6rem; box-shadow: 0 20px 40px -12px rgb(0 0 0 / .6); }
+.hero__vancard img { display: block; width: 100%; height: auto; border-radius: var(--sc-r-md); }
+.hero__vancard span { display: block; margin-top: .5rem; padding-inline: .3rem; font-size: .74rem; color: var(--ink-l-soft); }
+.hero__copy { top: 50%; bottom: auto; translate: 0 -46%; width: min(34rem, 38vw); }
+.hero h1 { text-shadow: none; font-size: clamp(2.6rem, 1.3rem + 3.3vw, 4.8rem); }
+.hero__proof { margin-top: 1rem; font-size: .85rem; color: var(--ink-l-soft); }
+.hero__proof span { color: #F5B740; letter-spacing: .1em; }
+@media (max-width: 760px) {
+  .hero__copy { top: calc(var(--bar-h) + 1.4rem); translate: none; left: 1.25rem; right: 1.25rem; width: auto; }
+  .hero__photo { top: auto; left: 0; width: auto; bottom: calc(74px + env(safe-area-inset-bottom)); height: 46svh; }
+  .hero__photo img { object-position: 78% 28%; }
+  .hero__photo::after { background: linear-gradient(to bottom, var(--night), rgb(14 19 23 / 0) 22%), linear-gradient(to top, rgb(14 19 23 / .6), transparent 30%); }
+  .hero__photo figcaption { left: 1.25rem; right: auto; bottom: .8rem; }
+  .hero__vancard { display: none; }
+}
+.hero__eyebrow { color: var(--acc-dk); margin-bottom: 1.1rem; }
+@media (max-width: 760px) { .hero__eyebrow { display: none; } }
+
+  /* ---------- mobile call bar ---------- */
+  .callbar { display: none; }
+
+  /* ================= responsive ================= */
+  @media (max-width: 1100px) {
+    .bar nav { display: none; }
+  }
+  @media (max-width: 1100px) { .voices__more { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 1000px) { .svc__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .steps__list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 900px) {
+    .svc__head, .lift__grid { grid-template-columns: 1fr; }
+    .status { display: none; }
+    .triage__grid, .owner__grid, .info__grid, .order__grid { grid-template-columns: 1fr; }
+    .row { grid-template-columns: 1fr; gap: .5rem; padding: 1.25rem 0; }
+    .voices__more { grid-template-columns: 1fr; }
+    .lift__recent { font-size: var(--sc-t-sm); }
+  }
+  @media (max-width: 760px) {
+    :root { --bar-h: 58px; }
+    .bar__call { display: none; }
+    .mark__word small { display: none; }
+    .mark svg { width: 34px; }
+    .mark__word b { font-size: .92rem; }
+    .mode button { padding: 0 .6rem; }
+    .mode button span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .mode button { min-width: 44px; min-height: 40px; }
+
+    .hero h1 { font-variation-settings: "wdth" 118; text-shadow: 0 2px 22px rgb(6 9 12 / .4); font-size: clamp(2.4rem, 11vw, 3.2rem); }
+    .hero__sub { font-size: 1.02rem; margin-top: .8rem; }
+    .hero__van { width: 96vw; right: 2vw; bottom: 11vh; }
+    .hero__beat { display: none; }
+    .hero__scrim { background: linear-gradient(to bottom, rgb(8 12 15 / .82), rgb(8 12 15 / .5) 38%, rgb(8 12 15 / 0) 60%), linear-gradient(to top, rgb(8 12 15 / .5), transparent 30%); }
+
+    .row__thumb { display: block; margin-top: .75rem; aspect-ratio: 16 / 9; border-radius: var(--sc-r-sm); overflow: hidden; }
+    .row__thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .row__where { display: none; }
+    .verdict__in { grid-template-columns: 1fr; }
+    .svc__grid, .steps__list { grid-template-columns: 1fr; }
+    .hero__cta { display: flex; margin-top: 1.1rem; }
+    .hero__cta .btn--ghost { display: none; }
+    .lift__media { padding: 0 0 18% 10%; }
+    .towns { columns: 2; font-size: var(--sc-t-sm); }
+    .ticket form { grid-template-columns: 1fr; padding: 1.25rem; }
+    .ticket__head { padding: .9rem 1.25rem; }
+    .work--stack .work__stage { height: auto; display: block; padding: clamp(4rem, 12vw, 5rem) 0; }
+    .work--stack .work__rail { flex-direction: column; gap: 2rem; }
+    .work--stack .work__lead, .work--stack .job, .work--stack .story { flex: none; width: 100%; }
+    .job__img { aspect-ratio: 4 / 3; }
+
+    .callbar { display: grid; grid-template-columns: 1.3fr 1fr; gap: .5rem; position: fixed; z-index: 80; left: 0; right: 0; bottom: 0; padding: .6rem .75rem calc(.6rem + env(safe-area-inset-bottom)); background: rgb(14 19 23 / .97); border-top: 1px solid rgb(238 242 243 / .1); }
+    .callbar .btn { justify-content: center; min-height: 50px; padding: 0 .75rem; }
+    .callbar .btn--ghost { color: var(--ink-l); }
+    body { padding-bottom: calc(74px + env(safe-area-inset-bottom)); }
+  }
+  @media (max-width: 340px) {
+    .mark__word { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero__plate, .hero__van, .hero__snow { transform: none !important; }
+    .crane__shot { transform: translate3d(0, calc((1 - var(--sc-p, 0) * .5) * (100svh - var(--H))), 0); }
+    .hero__snow { display: none; }
+  }
+</style>
+</head>
+<body data-mode="heat">
+
+<span data-sc-progress></span>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path fill="currentColor" d="M12.6 2c.4 3-1.2 4.6-2.7 6.3C8.3 10 7 11.7 7 14.4 7 18 9.5 21 12.6 21c3.4 0 5.9-2.7 5.9-6.3 0-2.1-.9-3.9-2.2-5.3.1 1.6-.5 2.9-1.7 3.4.5-3.7-.8-7.6-2-9.8Z"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/><path d="m9.5 3.8 2.5 2 2.5-2M9.5 20.2l2.5-2 2.5 2M4.2 10.4l2.7-.8-.6-2.8M19.8 13.6l-2.7.8.6 2.8M4.2 13.6l2.7.8-.6 2.8M19.8 10.4l-2.7-.8.6-2.8"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></g></symbol>
+    <symbol id="i-mark" viewBox="0 0 100 96">
+      <path fill="#F27A36" d="M74 38 57 67.4H23L6 38 23 8.6h34z"/>
+      <path fill="#2FA3E6" d="M96 62 81 88H51L36 62 51 36h30z"/>
+      <path fill="#1F79B0" d="M51 36h21.8l1.2 2-17 29.4H39.1L36 62z"/>
+      <path fill="var(--mark-cut, #0E1317)" d="M37.5 62.5c-8.5-2.6-12.6-10-9-18.3.6 3.6 2.5 5.7 4.8 6.6-1.4-7.5 2.8-14.7 9.6-20.3-.6 6.2 3 10 4.6 15.2 1.7 5.6-.7 12.6-6.4 16.3 1.5-3.6 1-7.2-1.5-9.6-.4 3.8-1.2 7-2.1 10.1Z"/>
+      <g fill="none" stroke="var(--mark-cut, #0E1317)" stroke-width="3.6" stroke-linecap="round"><path d="M66 48v28M53.9 55l24.2 14M53.9 69l24.2-14"/><path d="m62.4 50.6 3.6 3 3.6-3M62.4 73.4l3.6-3 3.6 3M55.8 59.4l4.3-.9-.7-4.5M76.2 64.6l-4.3.9.7 4.5M55.8 64.6l4.3.9-.7 4.5M76.2 59.4l-4.3-.9.7-4.5"/></g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="bar">
+  <div class="bar__in">
+    <a class="mark" href="#top" aria-label="OnTrac HVAC, home">
+      <svg viewBox="0 0 100 96" aria-hidden="true"><use href="#i-mark"/></svg>
+      <span class="mark__word"><b>ONTRAC HVAC</b><small>HEATING &amp; COOLING</small></span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#emergency">Emergency</a>
+      <a href="#services">Services</a>
+      <a href="#work">Our work</a>
+      <a href="#area">Service area</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="bar__right">
+      <span class="mode__q">What&rsquo;s wrong?</span>
+      <div class="mode" role="radiogroup" aria-label="What&rsquo;s wrong?">
+        <i class="mode__thumb" aria-hidden="true"></i>
+        <button type="button" role="radio" aria-checked="true" data-set-mode="heat"><svg aria-hidden="true"><use href="#i-flame"/></svg><span>No heat</span></button>
+        <button type="button" role="radio" aria-checked="false" data-set-mode="cool"><svg aria-hidden="true"><use href="#i-snow"/></svg><span>No AC</span></button>
+      </div>
+      <div class="status"><b>Open now</b><span>24 hours, 7 days</span></div>
+      <a class="btn btn--call bar__call" href="tel:+13475996791"><svg aria-hidden="true"><use href="#i-phone"/></svg><span class="num">Call (347) 599-6791</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- 1 · RELIEF: layered street, real van. Pin + bespoke plane choreography off --sc-p -->
+  <section id="top" class="hero" data-sc-act="pin" data-sc-span="1.6" aria-label="OnTrac HVAC">
+    <div data-sc-stage class="hero__stage">
+      <figure class="hero__photo">
+        <img src="assets/cezar-minisplit.webp" width="1320" height="988" alt="Cezar Dinca of OnTrac HVAC connecting a heat pump outside a Long Island home" fetchpriority="high">
+        <figcaption><b>Cezar Dinca</b> on a heat pump install. He&rsquo;s the one who shows up.</figcaption>
+      </figure>
+      <div class="hero__vancard" aria-hidden="true"><img src="assets/van.webp" width="1320" height="612" alt=""><span>Look for the white van · Commack, NY</span></div>
+
+      <div class="hero__copy" data-sc-cue="0 0.5 0">
+        <p class="hero__eyebrow t-label">24-hour heating &amp; cooling · Commack, NY</p>
+        <h1><span class="only-heat">House cold? <em>We&rsquo;re up.</em></span><span class="only-cool">AC quit? <em>We&rsquo;re up.</em></span></h1>
+        <p class="hero__sub">Heating and cooling repair, any hour, from a local shop based in Commack, Long Island.</p>
+        <div class="hero__cta">
+          <a class="btn btn--call" href="tel:+13475996791"><svg aria-hidden="true"><use href="#i-phone"/></svg><span class="num">Call (347) 599-6791</span></a>
+          <a class="btn btn--ghost" href="#book" data-prefill=""><svg aria-hidden="true"><use href="#i-cal"/></svg>Book a visit</a>
+        </div>
+        <p class="hero__proof"><span aria-hidden="true">★★★★★</span> 5.0 on HomeAdvisor &amp; Angi · In business since 2021</p>
+      </div>
+
+      <div class="hero__beat" data-sc-cue="0.48">
+        <p><strong>Nights, weekends, holidays.</strong>The phone is answered around the clock, every day of the year.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- trust strip -->
+  <section class="trust dark" aria-label="Why people call OnTrac">
+    <div class="sc-wrap trust__in">
+      <a class="trust__item" href="https://www.homeadvisor.com/rated.OnTracHVAC.124196792.html" target="_blank" rel="noopener"><span class="stars" aria-hidden="true">★★★★★</span><span><b>5.0</b> on HomeAdvisor &amp; Angi · 5 reviews</span></a>
+      <span class="trust__item"><b>Recommended</b> in Commack &amp; East Northport community groups</span>
+      <span class="trust__item"><b>EPA</b> certified</span>
+      <span class="trust__item"><b>Free</b> estimates on installs</span>
+      <span class="trust__item"><b>Se habla</b> español</span>
+    </div>
+  </section>
+
+  <!-- 2 · RECOGNITION: triage. Flow + reveal -->
+  <section id="emergency" class="triage light" data-sc-act="flow">
+    <div class="sc-wrap triage__grid">
+      <div data-sc-in>
+        <h2><span class="only-heat">No heat?</span><span class="only-cool">No cooling?</span> Start here.</h2>
+        <p class="triage__lede">Tap what you&rsquo;re seeing. You&rsquo;ll get a straight answer: call right now, or book a visit.</p>
+        <p class="triage__safety"><strong>Smell gas, or a carbon monoxide alarm is going off?</strong> Get everyone outside first and call 911 from there. Then call us.</p>
+      </div>
+      <div data-sc-reveal="up" data-sc-reveal-at="0.08 0.42">
+        <ul class="symptoms" id="symptoms" aria-label="Common problems"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · COMPETENCE: services, shown openly as photo cards -->
+  <section id="services" class="svc light" data-sc-act="flow">
+    <div class="sc-wrap">
+      <div class="svc__head" data-sc-in>
+        <h2>Heating and cooling for Long Island homes and shops.</h2>
+        <p>Repairs, replacements and new installs. The job photos on this page are our own work; photos marked &ldquo;representative&rdquo; show the type of equipment.</p>
+      </div>
+      <div class="svc__grid" id="rows" data-sc-in data-sc-stagger="60">
+        <article class="card" data-key="ductless">
+          <div class="card__img"><img src="assets/ductless.webp" width="1600" height="1195" loading="lazy" alt="A ductless mini-split indoor unit mounted above a window in a Long Island living room"><span class="card__rep">Representative photo</span></div>
+          <h3>Ductless mini-splits</h3>
+          <p>Heat and AC room by room, with no ductwork to add. One room or the whole house.</p>
+          <p class="card__subs">Single-zone · Multi-zone · Repairs</p>
+          <a class="card__link" href="#book" data-prefill="New AC / mini-split estimate">Get an estimate <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="card" data-key="central">
+          <div class="card__img"><img src="assets/central-ac-pavers.webp" width="1320" height="1758" loading="lazy" style="object-position:50% 62%" alt="Two central air condensers OnTrac set on a paver patio"></div>
+          <h3>Central air &amp; heat pumps</h3>
+          <p>Split systems sized to your house, installed, charged and tested before we leave.</p>
+          <p class="card__subs">AC repair · Heat pumps · Replacements</p>
+          <a class="card__link" href="#book" data-prefill="AC not cooling">Book a repair <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="card" data-key="heating">
+          <div class="card__img"><img src="assets/boiler.webp" width="1600" height="1195" loading="lazy" alt="A hot-water boiler with copper piping in a basement utility room"><span class="card__rep">Representative photo</span></div>
+          <h3>Furnaces &amp; boilers</h3>
+          <p>No-heat calls, safety checks, tune-ups and replacements for gas and oil heat.</p>
+          <p class="card__subs">Forced air · Hot water · Steam</p>
+          <a class="card__link" href="#book" data-prefill="No heat">Book a repair <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="card" data-key="air">
+          <div class="card__img"><img src="assets/attic-air-handler.webp" width="1320" height="988" loading="lazy" alt="An air handler with insulated flex duct runs OnTrac installed in an attic"></div>
+          <h3>Air handlers &amp; ductwork</h3>
+          <p>Attic and basement air handlers, new duct runs, sealed and balanced so every room gets air.</p>
+          <p class="card__subs">Air handlers · Flex &amp; sheet metal · Airflow fixes</p>
+          <a class="card__link" href="#book" data-prefill="Ductwork / airflow">Get an estimate <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="card" data-key="commercial">
+          <div class="card__img"><img src="assets/rooftop-rtu.webp" width="1320" height="1424" loading="lazy" style="object-position:50% 60%" alt="A packaged rooftop unit on a flat commercial roof"></div>
+          <h3>Commercial rooftop units</h3>
+          <p>Packaged RTUs for shops, offices and warehouses, up to crane-set replacements.</p>
+          <p class="card__subs">Service · Replacement · Crane lifts</p>
+          <a class="card__link" href="#book" data-prefill="Commercial rooftop unit">Talk to us <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="card" data-key="maint">
+          <div class="card__img"><img src="assets/gauges.webp" width="1600" height="1195" loading="lazy" alt="Refrigerant gauges connected to an outdoor air conditioning unit during a tune-up"><span class="card__rep">Representative photo</span></div>
+          <h3>Tune-ups &amp; maintenance</h3>
+          <p>Seasonal check-ups that catch worn parts before the first cold night or heat wave.</p>
+          <p class="card__subs">Fall heating check · Spring AC check</p>
+          <a class="card__link" href="#book" data-prefill="Heating tune-up">Schedule a tune-up <span aria-hidden="true">&rarr;</span></a>
+        </article>
+      </div>
+      <p class="svc__brands"><span>We install and service</span> Mitsubishi Electric · Fujitsu · Daikin · Carrier · LG · Rheem · Trane · York</p>
+      <div class="svc__bar">
+        <p><b>Something broken right now?</b> Skip the form.</p>
+        <a class="btn btn--call" href="tel:+13475996791"><svg aria-hidden="true"><use href="#i-phone"/></svg><span class="num">Call (347) 599-6791</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3b · HOW A CALL GOES -->
+  <section class="steps light" data-sc-act="flow" aria-labelledby="steps-h">
+    <div class="sc-wrap">
+      <h2 id="steps-h">What happens when you call</h2>
+      <ol class="steps__list" data-sc-in data-sc-stagger="70">
+        <li><span class="steps__n num">1</span><h3>A person picks up</h3><p>Day or night, weekends and holidays. Tell us what the system is doing.</p></li>
+        <li><span class="steps__n num">2</span><h3>We come with the right parts</h3><p>Brand, error codes and symptoms up front means fewer second trips.</p></li>
+        <li><span class="steps__n num">3</span><h3>You hear what&rsquo;s wrong first</h3><p>We explain the problem and what it will take before any work starts. Install estimates are free.</p></li>
+        <li><span class="steps__n num">4</span><h3>Tested, then cleaned up</h3><p>Everything is run and checked before we pack up, and the work area is left clean.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 4 · INTIMACY (quiet, before the peak): flow + parallax in the media column -->
+  <section class="owner light" data-sc-act="flow" style="background: var(--paper)">
+    <div class="sc-wrap owner__grid">
+      <figure>
+        <img src="assets/cezar-minisplit.webp" alt="Cezar Dinca of OnTrac HVAC kneeling beside a mini-split outdoor unit he is installing against a brick house" width="1320" height="988" loading="lazy" data-sc-parallax="-0.5">
+        <figcaption>Cezar Dinca on a ductless install</figcaption>
+      </figure>
+      <div data-sc-in>
+        <h2>Ask for Cezar.</h2>
+        <p>Cezar Dinca runs OnTrac out of Commack, and every review we have mentions him by name. Neighbors in the Commack community group call him &ldquo;super reliable, honest and a local dad.&rdquo; Customers write about the same things: he explains the system, tests everything before he packs up, and gets old equipment running that other companies called unserviceable.</p>
+        <p class="es">Se habla español.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · THE LIFT: static split, photos layered at different depths -->
+  <section class="lift dark" data-sc-act="flow" aria-labelledby="lift-h">
+    <div class="sc-wrap lift__grid">
+      <div class="lift__copy" data-sc-in>
+        <p class="t-label lift__eyebrow">Commercial</p>
+        <h2 id="lift-h">Some jobs need a crane. We handle those too.</h2>
+        <p>Rooftop units for shops, offices and warehouses across Long Island: service calls, repairs, and full replacements set by crane.</p>
+        <ul class="lift__list">
+          <li>Packaged rooftop units (RTUs)</li>
+          <li>Crane-set replacements</li>
+          <li>Split systems for offices and storefronts</li>
+          <li>After-hours service so the business stays open</li>
+        </ul>
+        <p class="lift__recent"><b>Recent commercial work:</b> mini-splits at the Cherry Valley Sports Complex, custom ductwork for an event space, a Rheem rooftop replacement, and condensers on New York City rooftops.</p>
+        <a class="btn btn--call" href="#book" data-prefill="Commercial rooftop unit"><svg aria-hidden="true"><use href="#i-cal"/></svg>Talk about a commercial job</a>
+      </div>
+      <div class="lift__media">
+        <figure class="lift__main">
+          <img src="assets/crane.webp" width="1800" height="3200" loading="lazy" data-sc-parallax="-0.9" alt="A crane lifting a rooftop HVAC unit off a flatbed on an OnTrac commercial job">
+        </figure>
+        <figure class="lift__inset" data-sc-parallax="0.7">
+          <img src="assets/rooftop-rtu.webp" width="1320" height="1424" loading="lazy" alt="The rooftop unit set on the roof with a technician beside it">
+          <figcaption>Set, connected, started up.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · PROOF: the work, labelled like records. Pan -->
+  <section id="work" class="work light" data-sc-act="pan" data-sc-span="3.0">
+    <div data-sc-stage class="work__stage">
+      <div class="work__rail" data-sc-pan="0.04">
+        <div class="work__lead">
+          <h2>Recent work.</h2>
+          <p>Recent installs by our crew, labelled the way we&rsquo;d write them up.</p>
+        </div>
+        <figure class="job">
+          <div class="job__img"><img src="assets/cezar-minisplit.webp" alt="BlueRidge mini-split outdoor unit beside a brick colonial" width="1320" height="988" loading="lazy" style="object-position:38% 50%"></div>
+          <dl><dt>System</dt><dd>Ductless mini-split, BlueRidge</dd><dt>Setting</dt><dd>Brick colonial, back yard</dd><dt>Scope</dt><dd>Outdoor unit, line set and cover</dd></dl>
+        </figure>
+        <figure class="job">
+          <div class="job__img"><img src="assets/fujitsu-pair.webp" alt="Two Fujitsu outdoor units side by side" width="1320" height="988" loading="lazy"></div>
+          <dl><dt>System</dt><dd>Ductless, two outdoor units, Fujitsu</dd><dt>Setting</dt><dd>Side of house</dd><dt>Scope</dt><dd>Condensers set, line covers run up the wall</dd></dl>
+        </figure>
+        <figure class="job">
+          <div class="job__img"><img src="assets/minisplit-bracket.webp" alt="Stacked mini-split condensers on a raised stand" width="1320" height="1758" loading="lazy"></div>
+          <dl><dt>System</dt><dd>Ductless, paired condensers</dd><dt>Setting</dt><dd>Narrow side yard</dd><dt>Scope</dt><dd>Raised stand, clear of snow and runoff</dd></dl>
+        </figure>
+        <figure class="job">
+          <div class="job__img"><img src="assets/central-ac-pavers.webp" alt="Two central air condensers on a paver patio" width="1320" height="1758" loading="lazy"></div>
+          <dl><dt>System</dt><dd>Central air, two condensers</dd><dt>Setting</dt><dd>Paver patio</dd><dt>Scope</dt><dd>Matched pair, set level on pads</dd></dl>
+        </figure>
+        <figure class="job">
+          <div class="job__img"><img src="assets/attic-air-handler.webp" alt="Air handler and insulated flex duct in an attic" width="1320" height="988" loading="lazy"></div>
+          <dl><dt>System</dt><dd>Air handler &amp; ductwork</dd><dt>Setting</dt><dd>Attic</dd><dt>Scope</dt><dd>Insulated flex runs to each room</dd></dl>
+        </figure>
+        <figure class="job">
+          <div class="job__img"><img src="assets/rooftop-rtu.webp" alt="Packaged rooftop unit on a flat commercial roof with a technician" width="1320" height="1424" loading="lazy"></div>
+          <dl><dt>System</dt><dd>Packaged rooftop unit</dd><dt>Setting</dt><dd>Flat commercial roof</dd><dt>Scope</dt><dd>Unit set, connected and started up</dd></dl>
+        </figure>
+        <figure class="job">
+          <div class="job__img"><img src="assets/cherry-valley.webp" alt="A wall-mounted mini-split outdoor unit on a commercial building at the Cherry Valley Sports Complex" width="960" height="1280" loading="lazy"></div>
+          <dl><dt>System</dt><dd>Ductless mini-splits</dd><dt>Setting</dt><dd>Cherry Valley Sports Complex</dd><dt>Scope</dt><dd>Wall-mounted outdoor units, indoor heads</dd></dl>
+        </figure>
+        <figure class="job">
+          <div class="job__img"><img src="assets/nyc-rooftop.webp" alt="A new condenser on a New York City rooftop with apartment buildings behind" width="600" height="800" loading="lazy"></div>
+          <dl><dt>System</dt><dd>Split system condenser</dd><dt>Setting</dt><dd>New York City rooftop</dd><dt>Scope</dt><dd>Condenser set on the roof, line set run</dd></dl>
+        </figure>
+        <aside class="story" aria-label="Customer story">
+          <span class="t-label">East Northport</span>
+          <blockquote>Five ductless units in two and a half days. &ldquo;Honestly you never knew they were there.&rdquo;</blockquote>
+          <p>Kevin C. posted about his whole-house install in the East Northport moms group. The crew called ahead to finish before a storm and checked with him on every unit placement.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · WARMTH: neighbours' words -->
+  <section class="voices dark" data-sc-act="flow" aria-labelledby="voices-h">
+    <div class="sc-wrap">
+      <h2 id="voices-h" class="voices__h">What neighbors say</h2>
+      <figure class="voices__lead" data-sc-in>
+        <blockquote class="voices__big">He saved a family of eight from sweltering when everyone else said it could not be done.</blockquote>
+        <figcaption><b>Antonio M.</b> · <a href="https://www.homeadvisor.com/rated.OnTracHVAC.124196792.html" target="_blank" rel="noopener">HomeAdvisor</a>, June 2026</figcaption>
+      </figure>
+      <div class="voices__more" data-sc-in data-sc-stagger="60">
+        <figure><blockquote>&ldquo;Just had mine done by Cezar from OnTrac HVAC. He was absolutely fantastic, professional, beyond reasonable and local.&rdquo;</blockquote><figcaption><b>Regina V.</b> · East Northport moms group, June 2026</figcaption></figure>
+        <figure><blockquote>&ldquo;I had recommended him to several friend[s] and all have been extremely satisfied.&rdquo;</blockquote><figcaption><b>Robert S.</b> · Commack Community Group, January 2026</figcaption></figure>
+        <figure><blockquote>&ldquo;They seek perfection and perform their services as if they doing work on their own home.&rdquo;</blockquote><figcaption><b>Paul M.</b> · HomeAdvisor, October 2022</figcaption></figure>
+        <figure><blockquote>&ldquo;Cezar installed a split system unit in a timely manner and tested all equipment before leaving.&rdquo;</blockquote><figcaption><b>Kurt B.</b> · HomeAdvisor, March 2025</figcaption></figure>
+      </div>
+      <p class="voices__links">Read more on <a href="https://www.homeadvisor.com/rated.OnTracHVAC.124196792.html" target="_blank" rel="noopener">HomeAdvisor</a>, <a href="https://www.angi.com/companylist/us/ny/commack/ontrac-hvac-llc-reviews-124196792.htm" target="_blank" rel="noopener">Angi</a> and <a href="https://www.facebook.com/OnTracHVAC/" target="_blank" rel="noopener">Facebook</a>.</p>
+    </div>
+  </section>
+
+  <!-- 8 · CLARITY: area, rebates, answers. Dense flow -->
+  <section id="area" class="info light" data-sc-act="flow">
+    <div class="sc-wrap info__grid">
+      <div>
+        <h2>Based in Commack. Working across Suffolk, Nassau and Queens.</h2>
+        <ul class="towns">
+          <li>Commack</li><li>East Northport</li><li>Northport</li><li>Huntington</li><li>Greenlawn</li><li>Dix Hills</li><li>Smithtown</li><li>Kings Park</li><li>Hauppauge</li><li>North Babylon</li><li>Massapequa</li><li>Roslyn</li><li>Garden City</li><li>Queens &amp; NYC</li>
+        </ul>
+        <p class="info__note">Not on the list? Call anyway. If we can get to you, we will, and if we can&rsquo;t, we&rsquo;ll say so.</p>
+        <div class="rebate">
+          <h3>Heat pump rebates</h3>
+          <p>PSEG Long Island offers rebates on qualifying heat pumps, including ductless mini-splits. Ask when you call and we&rsquo;ll check whether your system qualifies.</p>
+        </div>
+      </div>
+      <div id="faq">
+        <h2>Straight answers.</h2>
+        <div class="faq">
+          <details><summary>Are you really open 24 hours?</summary><p>Yes. Nights, weekends and holidays. When the heat goes out at 2am, call (347) 599-6791.</p></details>
+          <details><summary>Do you charge for estimates?</summary><p>Estimates on new installs and replacements are free. We&rsquo;ll look at the house, size the system and give you the number before any work starts.</p></details>
+          <details><summary>Ductless or central air: which should I get?</summary><p>If you already have ductwork in good shape, central air or a ducted heat pump usually makes sense. No ducts, an older home, an addition or a finished basement? Ductless is often cleaner and cheaper to install. We&rsquo;ll tell you which fits after we see it.</p></details>
+          <details><summary>What brands do you work on?</summary><p>Most major brands, including Mitsubishi Electric, Fujitsu, Daikin, Carrier, LG, Rheem, Trane and York. Mitsubishi and Fujitsu ductless systems are a big part of what we install.</p></details>
+          <details><summary>Do you do commercial work?</summary><p>Yes. Rooftop units, split systems and service for shops, offices and warehouses, including crane-set replacements.</p></details>
+          <details><summary>¿Hablan español?</summary><p>Sí. Llámenos al (347) 599-6791.</p></details>
+          <details><summary>How do I pay?</summary><p>Credit cards are accepted. Ask about other options when you book.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 · RESOLVE: the work order, already filled in -->
+  <section id="book" class="order dark" data-sc-act="flow">
+    <div class="sc-wrap">
+      <div class="order__grid">
+        <div class="order__aside">
+          <h2>Tell us what&rsquo;s wrong.</h2>
+          <p>Fill out the work order, or skip it and call the 24-hour line.</p>
+          <a class="order__phone num" href="tel:+13475996791">(347) 599-6791</a>
+          <dl>
+            <dt>Hours</dt><dd>Open 24 hours, every day</dd>
+            <dt>Office</dt><dd><a class="num" href="tel:+15165062991">(516) 506-2991</a> <span class="muted">(the number on our van)</span></dd>
+            <dt>Email</dt><dd><a href="mailto:ontrachvac@gmail.com">ontrachvac@gmail.com</a></dd>
+            <dt>Facebook</dt><dd><a href="https://www.facebook.com/OnTracHVAC/" target="_blank" rel="noopener">facebook.com/OnTracHVAC</a></dd>
+            <dt>Based in</dt><dd>Commack, NY 11725</dd>
+          </dl>
+        </div>
+
+        <div class="ticket">
+          <div class="ticket__head">
+            <span class="t-label">Work order</span>
+            <span class="ticket__mode"><span class="only-heat">Heating</span><span class="only-cool">Cooling</span></span>
+          </div>
+          <form id="order" action="mailto:ontrachvac@gmail.com" method="post" enctype="text/plain">
+            <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+            <div class="field"><label for="f-town">Town</label><input id="f-town" name="town" autocomplete="address-level2" placeholder="e.g. Commack"></div>
+            <div class="field"><label for="f-issue">Problem</label>
+              <select id="f-issue" name="problem"></select>
+            </div>
+            <fieldset class="field field--full seg"><legend>Property</legend>
+              <label><input type="radio" name="property" value="Home" checked><span>Home</span></label>
+              <label><input type="radio" name="property" value="Business"><span>Business</span></label>
+            </fieldset>
+            <fieldset class="field field--full seg"><legend>When</legend>
+              <label><input type="radio" name="when" value="As soon as possible" checked><span>As soon as possible</span></label>
+              <label><input type="radio" name="when" value="Today"><span>Today</span></label>
+              <label><input type="radio" name="when" value="This week"><span>This week</span></label>
+              <label><input type="radio" name="when" value="Just an estimate"><span>Just an estimate</span></label>
+            </fieldset>
+            <div class="field field--full"><label for="f-notes">Details</label><textarea id="f-notes" name="details" placeholder="What's it doing? Brand, error codes, anything you've tried."></textarea></div>
+            <p class="ticket__status" id="order-status" role="status" aria-live="polite"></p>
+            <div class="ticket__foot">
+              <button class="btn btn--call" type="submit"><svg aria-hidden="true"><use href="#i-cal"/></svg>Send work order</button>
+              <button class="btn btn--ghost" type="button" id="order-sms">Text it instead</button>
+              <small>Email opens with the work order filled in to ontrachvac@gmail.com; &ldquo;Text it&rdquo; opens a text to (347) 599-6791. For anything urgent, call.</small>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <footer class="foot">
+        <a class="mark" href="#top" aria-label="OnTrac HVAC, back to top"><svg viewBox="0 0 100 96" aria-hidden="true"><use href="#i-mark"/></svg><span class="mark__word"><b>ONTRAC HVAC</b><small>HEATING &amp; COOLING</small></span></a>
+        <span>OnTrac HVAC LLC · Commack, NY 11725 · <a class="num" href="tel:+13475996791">(347) 599-6791</a> · Open 24 hours</span>
+        <span><a href="https://www.facebook.com/OnTracHVAC/" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.homeadvisor.com/rated.OnTracHVAC.124196792.html" target="_blank" rel="noopener">HomeAdvisor</a> · <a href="https://www.angi.com/companylist/us/ny/commack/ontrac-hvac-llc-reviews-124196792.htm" target="_blank" rel="noopener">Angi</a> · &copy; 2026 OnTrac HVAC LLC</span>
+      </footer>
+    </div>
+  </section>
+
+</main>
+
+<div class="callbar">
+  <a class="btn btn--call" href="tel:+13475996791"><svg aria-hidden="true"><use href="#i-phone"/></svg><span class="num">Call now</span></a>
+  <a class="btn btn--ghost" href="#book" data-prefill=""><svg aria-hidden="true"><use href="#i-cal"/></svg>Book a visit</a>
+</div>
+
+<script src="scrollcraft.js"></script>
+<script>
+  if (matchMedia('(max-width: 760px)').matches) {
+    var w = document.getElementById('work');
+    w.setAttribute('data-sc-act', 'flow'); w.removeAttribute('data-sc-span'); w.classList.add('work--stack');
+    var st = w.querySelector('[data-sc-stage]'); st.removeAttribute('data-sc-stage');
+    w.querySelector('[data-sc-pan]').removeAttribute('data-sc-pan');
+  }
+  ScrollCraft.mount(document.body);
+</script>
+<script>
+(function () {
+  var body = document.body;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------------- content per mode ---------------- */
+  var SYMPTOMS = {
+    heat: [
+      { t: 'No heat at all, and it’s freezing out', v: 'call', d: 'Pipes can freeze within hours. Call now. If you use space heaters in the meantime, keep them well clear of anything that can burn.' },
+      { t: 'Boiler or furnace keeps shutting off', v: 'call', d: 'Repeated lockouts are usually a safety control doing its job. Don’t keep resetting it. Call and tell us what the unit is doing.' },
+      { t: 'Heat pump iced over and running nonstop', v: 'book', d: 'Light frost that clears during defrost is normal. A solid block of ice is not. Switch to emergency or auxiliary heat if you have it, then book.' },
+      { t: 'Some rooms cold, others fine', v: 'book', d: 'Usually airflow, a zone valve, a stuck damper or a duct problem. Uncomfortable, not dangerous. Book a visit.' },
+      { t: 'Banging, squealing or rattling', v: 'book', d: 'Noises are early warnings. Book a visit before a small part turns into a no-heat night.' },
+      { t: 'Time for a tune-up before winter', v: 'book', d: 'A fall tune-up catches worn parts before the first cold snap, when every HVAC phone on Long Island is ringing.' }
+    ],
+    cool: [
+      { t: 'AC running but blowing warm air', v: 'book', d: 'Check that the thermostat is set to cool and the filter isn’t clogged. If it’s a heat wave, or someone at home is elderly, very young or unwell, call now. Otherwise book.' },
+      { t: 'Outdoor unit isn’t running', v: 'call', d: 'Turn the system off at the thermostat so nothing overheats, check the breaker once, then call.' },
+      { t: 'Water leaking from the unit or ceiling', v: 'call', d: 'Shut the system off at the thermostat to stop the drain pan overflowing, put a bucket under it, and call.' },
+      { t: 'Ice on the copper lines or indoor coil', v: 'book', d: 'Turn cooling off and run the fan only to thaw it. It’s usually an airflow or refrigerant problem. Book a visit.' },
+      { t: 'Mini-split blinking or showing a code', v: 'book', d: 'Write down the code or the blink pattern. It tells us which part to bring, so the first visit can be the last.' },
+      { t: 'Time for a tune-up before summer', v: 'book', d: 'A spring tune-up cleans the coils and catches weak parts before the first heat wave.' }
+    ]
+  };
+  var ISSUES = {
+    heat: ['No heat', 'Boiler / furnace problem', 'Heat pump problem', 'Uneven heating', 'Heating tune-up', 'New heating system estimate'],
+    cool: ['AC not cooling', 'Outdoor unit not running', 'Water leak', 'Ice on lines / coil', 'Mini-split error code', 'Cooling tune-up', 'New AC / mini-split estimate']
+  };
+  var COMMON = ['Commercial rooftop unit', 'Ductwork / airflow', 'Something else'];
+  var ORDER = {
+    heat: ['heating', 'central', 'ductless', 'air', 'maint', 'commercial'],
+    cool: ['central', 'ductless', 'air', 'commercial', 'maint', 'heating']
+  };
+
+  var list = document.getElementById('symptoms');
+  var sel = document.getElementById('f-issue');
+  var rows = document.getElementById('rows');
+
+  function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+
+  function renderSymptoms(mode) {
+    list.innerHTML = '';
+    SYMPTOMS[mode].forEach(function (s, i) {
+      var li = el('li');
+      var id = 'v-' + mode + '-' + i;
+      var b = el('button');
+      b.type = 'button';
+      b.setAttribute('aria-expanded', 'false');
+      b.setAttribute('aria-controls', id);
+      b.innerHTML = '<span>' + s.t + '</span><span class="tag tag--' + s.v + '">' + (s.v === 'call' ? 'Call now' : 'Can book') + '</span>';
+      var v = el('div', 'verdict');
+      v.id = id;
+      var action = s.v === 'call'
+        ? '<a class="btn btn--call" href="tel:+13475996791"><svg aria-hidden="true"><use href="#i-phone"/></svg><span class="num">Call (347) 599-6791</span></a>'
+        : '<a class="btn btn--ghost" href="#book" data-prefill="' + ISSUES[mode][Math.min(i, ISSUES[mode].length - 1)] + '" data-note="' + s.t.replace(/"/g, '&quot;') + '"><svg aria-hidden="true"><use href="#i-cal"/></svg>Book a visit</a>';
+      v.innerHTML = '<div><div class="verdict__in"><p>' + (s.v === 'call' ? '<b class="call">Call now.</b> ' : '<b class="call">This can be booked.</b> ') + s.d + '</p>' + action + '</div></div>';
+      b.addEventListener('click', function () {
+        var open = li.classList.contains('open');
+        Array.prototype.forEach.call(list.children, function (o) { o.classList.remove('open'); o.firstChild.setAttribute('aria-expanded', 'false'); });
+        if (!open) { li.classList.add('open'); b.setAttribute('aria-expanded', 'true'); }
+      });
+      li.appendChild(b); li.appendChild(v); list.appendChild(li);
+    });
+  }
+
+  function renderIssues(mode) {
+    var keep = sel.value;
+    sel.innerHTML = '';
+    ISSUES[mode].concat(COMMON).forEach(function (o) { var op = el('option'); op.textContent = o; op.value = o; sel.appendChild(op); });
+    if (keep && ISSUES[mode].concat(COMMON).indexOf(keep) > -1) sel.value = keep;
+  }
+
+  function reorderRows(mode) {
+    var map = {};
+    Array.prototype.forEach.call(rows.children, function (r) { map[r.getAttribute('data-key')] = r; });
+    ORDER[mode].forEach(function (k) { if (map[k]) rows.appendChild(map[k]); });
+  }
+
+  function setMode(mode, save) {
+    body.setAttribute('data-mode', mode);
+    document.querySelectorAll('[data-set-mode]').forEach(function (b) { b.setAttribute('aria-checked', String(b.getAttribute('data-set-mode') === mode)); });
+    renderSymptoms(mode); renderIssues(mode); reorderRows(mode);
+    var tc = document.querySelector('meta[name="theme-color"]'); if (tc) tc.content = '#0E1317';
+    if (save) { try { localStorage.setItem('ontrac-mode', mode); } catch (e) {} }
+  }
+
+  document.querySelectorAll('[data-set-mode]').forEach(function (b) {
+    b.addEventListener('click', function () { setMode(b.getAttribute('data-set-mode'), true); });
+    b.addEventListener('keydown', function (e) {
+      if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].indexOf(e.key) < 0) return;
+      e.preventDefault();
+      var next = body.getAttribute('data-mode') === 'heat' ? 'cool' : 'heat';
+      setMode(next, true);
+      document.querySelector('[data-set-mode="' + next + '"]').focus();
+    });
+  });
+
+  /* prefill: anything with data-prefill carries the choice into the work order */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-prefill]');
+    if (!a) return;
+    var v = a.getAttribute('data-prefill');
+    if (v) {
+      if (![].some.call(sel.options, function (o) { return o.value === v; })) { var op = el('option'); op.value = op.textContent = v; sel.appendChild(op); }
+      sel.value = v;
+      if (v === 'Commercial rooftop unit') { var biz = document.querySelector('input[name="property"][value="Business"]'); if (biz) biz.checked = true; }
+    }
+    var note = a.getAttribute('data-note');
+    var ta = document.getElementById('f-notes');
+    if (note && !ta.value) ta.value = note + '. ';
+  });
+
+  /* ---------------- work order -> email ---------------- */
+  var form = document.getElementById('order');
+  function composeLines() {
+    var f = new FormData(form);
+    var mode = body.getAttribute('data-mode') === 'heat' ? 'Heating' : 'Cooling';
+    return ['Work order (' + mode + ')', 'Name: ' + f.get('name'), 'Phone: ' + f.get('phone'), 'Town: ' + (f.get('town') || '-'), 'Problem: ' + f.get('problem'), 'Property: ' + f.get('property'), 'When: ' + f.get('when'), 'Details: ' + (f.get('details') || '-')];
+  }
+  document.getElementById('order-sms').addEventListener('click', function () {
+    if (!form.reportValidity()) return;
+    window.location.href = 'sms:+13475996791?&body=' + encodeURIComponent(composeLines().join('\n'));
+    document.getElementById('order-status').textContent = 'Your messages app should open with the work order ready to send.';
+  });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    var f = new FormData(form);
+    var mode = body.getAttribute('data-mode') === 'heat' ? 'Heating' : 'Cooling';
+    var lines = ['Work order (' + mode + ')', '', 'Name: ' + f.get('name'), 'Phone: ' + f.get('phone'), 'Town: ' + (f.get('town') || '-'), 'Problem: ' + f.get('problem'), 'Property: ' + f.get('property'), 'When: ' + f.get('when'), '', 'Details:', f.get('details') || '-'];
+    var subject = 'Work order: ' + f.get('problem') + (f.get('town') ? ' (' + f.get('town') + ')' : '');
+    var href = 'mailto:ontrachvac@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+    window.location.href = href;
+    document.getElementById('order-status').textContent = 'Your email app should open with the work order ready to send. Nothing opened? Call (347) 599-6791.';
+  });
+
+  /* ---------------- initial mode: saved choice, else the season ---------------- */
+  var saved = null;
+  try { saved = localStorage.getItem('ontrac-mode'); } catch (e) {}
+  var m = new Date().getMonth();
+  setMode(saved === 'heat' || saved === 'cool' ? saved : (m >= 9 || m <= 3 ? 'heat' : 'cool'), false);
+})();
+</script>
+</body>
+</html>
